@@ -9,8 +9,12 @@ import (
 func NewRouter() *gin.Engine {
 	r := gin.Default()
 
-	r.GET("/books", handler.BooksHandler)
-	r.GET("/books/:id/content/:page", handler.BookContentHandler)
+	r.GET("/books/:page", handler.BookListHandler)
+	r.GET("/book/:id", handler.BookByIdHandler)
+	r.GET("/book/:id/content/:page", handler.BookContentHandler)
+	r.GET("/seed", handler.InjectSeedHanlder)
+	//r.GET("/seed/update", handler.UpdateSeederHandler)
+	//r.GET("/seed/files", handler.InjectSeedFromFilesHandler)
 
 	return r
 }

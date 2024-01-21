@@ -1,4 +1,4 @@
-package booklib
+package main
 
 import (
 	"booklib/internal/database"
@@ -8,10 +8,8 @@ import (
 func main() {
 	// Initialize the database connection
 	database.InitDB()
-
 	// Create a new Gin router
 	r := router.NewRouter()
-
 	// Start the server
 	r.Run(":8080")
 }
